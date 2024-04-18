@@ -6,7 +6,14 @@
 
     <groupId>de.kontext-e.jqassistant.plugin</groupId>
     <artifactId>jqassistant.plugin.dot</artifactId>
-    <version>1.7.0</version>
+    <version>1.8.0</version>
+
+    <properties>
+        <jqassistant.version>1.8.0</jqassistant.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
 
     <name>jQAssistant DOT plugin</name>
     <url>https://github.com/kontext-e/jqassistant-plugin-dot/</url>
@@ -40,12 +47,6 @@
         </developer>
     </developers>
 
-    <properties>
-        <jqassistant.version>1.7.0</jqassistant.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
-
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -73,7 +74,7 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
 
