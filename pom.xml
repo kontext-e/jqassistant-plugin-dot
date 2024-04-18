@@ -8,6 +8,29 @@
     <artifactId>jqassistant.plugin.dot</artifactId>
     <version>1.7.0</version>
 
+    <name>jQAssistant DOT plugin</name>
+    <url>https://github.com/kontext-e/jqassistant-plugin-dot/</url>
+
+    <scm>
+        <url>https://github.com/kontext-e/jqassistant-plugin-dot</url>
+    </scm>
+
+    <description>
+        The jQAssistant DOT plugin imports files in Graphviz DOT file format.
+    </description>
+
+    <organization>
+        <name>Kontext E GmbH</name>
+        <url>http://www.kontext-e.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License, v3</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+    </licenses>
+
     <properties>
         <jqassistant.version>1.7.0</jqassistant.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +64,7 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
             </plugin>
 
@@ -134,9 +157,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <scm>
-        <url>https://github.com/kontext-e/jqassistant-plugin-dot</url>
-    </scm>
 
 </project>
