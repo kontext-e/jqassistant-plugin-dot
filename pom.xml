@@ -6,10 +6,10 @@
 
     <groupId>de.kontext-e.jqassistant.plugin</groupId>
     <artifactId>jqassistant.plugin.dot</artifactId>
-    <version>1.11.0</version>
+    <version>1.12.0</version>
 
     <properties>
-        <jqassistant.version>1.11.0</jqassistant.version>
+        <jqassistant.version>1.12.0</jqassistant.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
