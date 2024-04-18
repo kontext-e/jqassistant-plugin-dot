@@ -31,6 +31,15 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Jens Nerche</name>
+            <email>j.nerche@kontext-e.de</email>
+            <organization>Kontext E GmbH</organization>
+            <organizationUrl>http://www.kontext-e.de</organizationUrl>
+        </developer>
+    </developers>
+
     <properties>
         <jqassistant.version>1.7.0</jqassistant.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
