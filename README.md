@@ -33,7 +33,7 @@ Attributes:
 | Name        | Description                                                                                           |
 |-------------|-------------------------------------------------------------------------------------------------------|
 | strict      | denotes whether the graph is strict (i.e. whether multi-edges are allowed)                            |
-| type        | //TODO error                                                                                          |
+| type        | denotes the type of graph (graph, digraph or subgraph)                                                |
 | dotId       | the ID of the dot node                                                                                |
 | [attribute] | the labels and the values of any custom attributes. For each graph attribute one neo4j-node attribute |
 
