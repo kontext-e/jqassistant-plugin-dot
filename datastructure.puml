@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+class DotFile{
+String name
+String fqn
+}
+
+DotFile --> Graph : HAS_GRAPH
+
+class Graph {
+boolean strict
+String type
+String dotId
+<Custom Attributes>
+}
+
+Graph --> Node : HAS_NODE
+Graph --> Graph : HAS_GRAPH
+class Node {
+String dotId
+<Custom Attributes>
+}
+
+Node <-- Node
+(Node, Node) .. IS_CONNECTED_WITH
+
+class IS_CONNECTED_WITH{
+<Custom Attributes>
+}
+
+@enduml
