@@ -7,18 +7,15 @@ import com.buschmais.jqassistant.core.store.api.Store;
 import com.buschmais.jqassistant.plugin.common.api.model.FileDescriptor;
 import com.buschmais.jqassistant.plugin.common.api.scanner.AbstractScannerPlugin;
 import com.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource;
-import com.khubla.dot4j.DOTMarshaller;
-import com.khubla.dot4j.domain.*;
-import de.kontext_e.jqassistant.plugin.dot.store.descriptor.AttributesContainer;
 import de.kontext_e.jqassistant.plugin.dot.store.descriptor.*;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @ScannerPlugin.Requires(FileDescriptor.class)
 public class DotScannerPlugin extends AbstractScannerPlugin<FileResource, DotDescriptor>  {
@@ -49,6 +46,16 @@ public class DotScannerPlugin extends AbstractScannerPlugin<FileResource, DotDes
         return checkstyleReportDescriptor;
     }
 
+    void readStream(Store store, DotFileDescriptor dotFileDescriptor, InputStream inputStream) throws IOException {
+        CharStream cs = CharStreams.fromStream(inputStream);
+        DOTLexer markupLexer = new DOTLexer(cs);
+        CommonTokenStream commonTokenStream = new CommonTokenStream(markupLexer);
+        DOTParser markupParser = new DOTParser(commonTokenStream);
+        DOTGraphVisitor visitor = new DOTGraphVisitor(store);
+        visitor.visit(markupParser.graph());
+    }
+
+/*
     void readStream(Store store, DotFileDescriptor dotFileDescriptor, InputStream inputStream) throws IOException {
         Graph graph = DOTMarshaller.importGraph(inputStream);
         importGraph(store, dotFileDescriptor, graph);
@@ -125,4 +132,5 @@ public class DotScannerPlugin extends AbstractScannerPlugin<FileResource, DotDes
             attributeDescriptors.setAttribute(attribute.getLhs(), attribute.getRhs(), attributes.getAttributeType().name());
         }
     }
+*/
 }

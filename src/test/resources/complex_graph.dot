@@ -1,0 +1,40 @@
+
+digraph G {
+    // This attribute applies to the graph itself
+    size="10,10";
+
+    // Define nodes with different shapes and styles
+    node [style=filled, color=lightblue];
+    A [shape=circle, label="Node A"];
+    B [shape=box, label="Node B"];
+    C [shape=diamond, label="Node C"];
+    D [shape=ellipse, label="Node D"];
+    
+    // Define edges with labels, weights, and bidirectional edges
+    A -> B [label="A to B", weight=1];
+    B -> C [label="B to C", weight=2];
+    C -> D [label="C to D", weight=3];
+    D -> A [label="D to A", weight=4];
+    A -> C [label="A to C", weight=5];
+    B -> D [label="B to D", weight=6];
+    D -> B [label="D to B", weight=7];
+    
+    // Define a subgraph
+    subgraph cluster_0 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled, color=white];
+        E [shape=octagon, label="Node E"];
+        F [shape=hexagon, label="Node F"];
+        E -> F [label="E to F", weight=8];
+    }
+
+    subgraph cluster_1 {
+        M -> N
+        F -> E
+    }
+    
+    // Define edges between subgraph and main graph
+    A -> E [label="A to E", weight=9];
+    F -> D [label="F to D", weight=10];
+}

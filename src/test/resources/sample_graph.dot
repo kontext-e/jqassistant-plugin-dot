@@ -1,0 +1,26 @@
+
+digraph G {
+    node [shape=circle, style=filled, color=lightblue];
+    edge [color=gray];
+
+    A [label="Node A"];
+    B [label="Node B"];
+    C [label="Node C"];
+    D [label="Node D"];
+
+    A -> B [label="A to B"];
+    B -> C [label="B to C"];
+    C -> D [label="C to D"];
+    D -> A [label="D to A"];
+    A -> C [label="A to C"];
+
+    x -> y
+
+
+    node [shape=record];
+    struct1 [label="{<f0> left |<f1> middle |<f2> right}"];
+    struct2 [label="{<f0> one |<f1> two}"];
+
+    struct1:f0:n -> struct2:f1;
+
+}
